@@ -44,19 +44,26 @@ Se automatizan flujos de login, navegación, carrito de compras y finalización 
 pip install -r requirements.txt
 
 ### 2️⃣ Ejecutar pruebas
+**Pruebas Conjuntas**
 pytest -v run_tests.py
+**Pruebas individuales**
+pytest -v test/**nombredelaprueba**.py
 
 ### 3️⃣ Ver prints y seguimiento detallado
-pytest -v -s run_tests.py **El modificador -s permite ver los print() del código durante la ejecución (recomendado para depuración).**
+**El modificador -s permite ver los print() del código durante la ejecución (recomendado para depuración).**
+pytest -v -s run_tests.py
 
 ## ▶️ Ejecución de reportes
 # Ejecutamos el archivo run_tests.py de la siguiente forma
-pytest -v run_tests.py ## Ejecuta las pruebas y te genera un archivo html con el reporte de los tests
-pytest -v -s run_tests.py ## Si queremos ver por consola los prints que hay dentro del codigo y hacer un seguimiento mas especifico agregamos el comando (-s) luego del comando (-v). (RECOMENDABLE)
+**Ejecuta las pruebas y te genera un archivo html con el reporte de los tests**
+pytest -v run_tests.py
+
+**Si queremos ver por consola los prints que hay dentro del codigo y hacer un seguimiento mas especifico agregamos el comando (-s) luego del comando (-v). (RECOMENDABLE)**
+pytest -v -s run_tests.py
 
 ## 🚀 Estructura del proyecto
 
-**🧠 Casos de Prueba Automatizados**
+## 🧠 Casos de Prueba Automatizados
 🔹 test_login.py
 - Validar login exitoso.
 - Verificar redirección a la página de inventario.
@@ -73,13 +80,13 @@ pytest -v -s run_tests.py ## Si queremos ver por consola los prints que hay dent
 - Completar el flujo de compra.
 - Validar que se muestre el mensaje de confirmación.
 
-**🧩 Estructura de Fixtures (conftest.py)**
+## 🧩 Estructura de Fixtures (conftest.py)
 El archivo conftest.py contiene fixtures globales para reutilizar en todos los tests:
 - driver → inicializa y cierra el navegador.
 - wait → controla esperas explícitas.
 - login → realiza el inicio de sesión antes de cada test.
 
-**🧰 Funciones Auxiliares (utils/)**
+## 🧰 Funciones Auxiliares (utils/)
 La carpeta utils/ contiene funciones reutilizables, como:
 - Login automatizado
 - Métodos para interactuar con elementos
@@ -87,12 +94,12 @@ La carpeta utils/ contiene funciones reutilizables, como:
 - Generación de datos de prueba
 Esto mejora la organización y evita duplicar código.
 
-**📄 Reportes de Ejecución**
+## 📄 Reportes de Ejecución
 Cada vez que se ejecuta run_tests.py, se genera un reporte HTML dentro de la carpeta reports/, con el resumen de resultados:
 - Pruebas pasadas y fallidas
 - Logs de ejecución
 
-**🧠 Aprendizajes y Buenas Prácticas Aplicadas**
+## 🧠 Aprendizajes y Buenas Prácticas Aplicadas
 - Organización modular del proyecto.
 - Uso de fixtures con distintos scope.
 - Implementación de esperas explícitas con WebDriverWait.
