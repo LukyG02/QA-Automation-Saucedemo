@@ -40,54 +40,54 @@ Se automatizan flujos de login, navegación, carrito de compras y finalización 
 ## ▶️ Instalación y Ejecución
 
 ### 1️⃣ Instalar dependencias
-**Consola**
+#### Consola
 pip install -r requirements.txt
 
 ### 2️⃣ Ejecutar pruebas
-**Pruebas Conjuntas**
+#### Pruebas Conjuntas
 pytest -v run_tests.py
-**Pruebas individuales**
+#### Pruebas individuales
 pytest -v test/**nombredelaprueba**.py
 
 ### 3️⃣ Ver prints y seguimiento detallado
 **El modificador -s permite ver los print() del código durante la ejecución (recomendado para depuración).**
 pytest -v -s run_tests.py
 
-## ▶️ Ejecución de reportes
-# Ejecutamos el archivo run_tests.py de la siguiente forma
-**Ejecuta las pruebas y te genera un archivo html con el reporte de los tests**
+# ▶️ Ejecución de reportes
+## Ejecutamos el archivo run_tests.py de la siguiente forma
+### Ejecuta las pruebas y te genera un archivo html con el reporte de los tests
 pytest -v run_tests.py
 
-**Si queremos ver por consola los prints que hay dentro del codigo y hacer un seguimiento mas especifico agregamos el comando (-s) luego del comando (-v). (RECOMENDABLE)**
+### Si queremos ver por consola los prints que hay dentro del codigo y hacer un seguimiento mas especifico agregamos el comando (-s) luego del comando (-v). (RECOMENDABLE)
 pytest -v -s run_tests.py
 
 ## 🚀 Estructura del proyecto
 
 ## 🧠 Casos de Prueba Automatizados
-🔹 test_login.py
+### 🔹 test_login.py
 - Validar login exitoso.
 - Verificar redirección a la página de inventario.
 
-🔹 test_navegacion.py
+### 🔹 test_navegacion.py
 - Verificar título correcto en la página de inventario.
 - Confirmar presencia de menú, filtros y productos visibles.
 
-🔹 test_carrito.py
+### 🔹 test_carrito.py
 - Verificar que los productos se agregan correctamente.
 - Validar que el contador del carrito se actualiza.
 
-🔹 test_compra.py
+### 🔹 test_compra.py
 - Completar el flujo de compra.
 - Validar que se muestre el mensaje de confirmación.
 
 ## 🧩 Estructura de Fixtures (conftest.py)
-El archivo conftest.py contiene fixtures globales para reutilizar en todos los tests:
+### El archivo conftest.py contiene fixtures globales para reutilizar en todos los tests:
 - driver → inicializa y cierra el navegador.
 - wait → controla esperas explícitas.
 - login → realiza el inicio de sesión antes de cada test.
 
 ## 🧰 Funciones Auxiliares (utils/)
-La carpeta utils/ contiene funciones reutilizables, como:
+### La carpeta utils/ contiene funciones reutilizables, como:
 - Login automatizado
 - Métodos para interactuar con elementos
 - Validaciones comunes
@@ -95,7 +95,7 @@ La carpeta utils/ contiene funciones reutilizables, como:
 Esto mejora la organización y evita duplicar código.
 
 ## 📄 Reportes de Ejecución
-Cada vez que se ejecuta run_tests.py, se genera un reporte HTML dentro de la carpeta reports/, con el resumen de resultados:
+### Cada vez que se ejecuta run_tests.py, se genera un reporte HTML dentro de la carpeta reports/, con el resumen de resultados:
 - Pruebas pasadas y fallidas
 - Logs de ejecución
 
